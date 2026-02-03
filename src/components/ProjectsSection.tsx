@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github } from "lucide-react";
+import ScrollAnimation from "./ScrollAnimation";
 
 const projects = [
   {
@@ -43,56 +44,60 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-6 bg-secondary/30">
       <div className="container mx-auto">
-        <h2 className="section-title">Projects</h2>
+        <ScrollAnimation>
+          <h2 className="section-title">Projects</h2>
+        </ScrollAnimation>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div
+            <ScrollAnimation
               key={project.title}
-              className="project-card group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              delay={index * 0.1}
+              direction={index % 2 === 0 ? "up" : "up"}
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-semibold group-hover:text-foreground transition-colors">
-                  {project.title}
-                </h3>
+              <div className="project-card group h-full">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-semibold group-hover:text-foreground transition-colors">
+                    {project.title}
+                  </h3>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 hover:bg-muted rounded-full transition-colors"
+                    aria-label={`View ${project.title} on GitHub`}
+                  >
+                    <Github size={20} />
+                  </a>
+                </div>
+
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="skill-tag text-xs">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 hover:bg-muted rounded-full transition-colors"
-                  aria-label={`View ${project.title} on GitHub`}
+                  className="inline-flex items-center gap-1 mt-6 text-sm font-medium hover:gap-2 transition-all mono-text"
                 >
-                  <Github size={20} />
+                  github <ArrowUpRight size={16} />
                 </a>
               </div>
-
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="skill-tag text-xs">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 mt-6 text-sm font-medium hover:gap-2 transition-all mono-text"
-              >
-                github <ArrowUpRight size={16} />
-              </a>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
 
         {/* DSA Mini Projects Link */}
-        <div className="mt-12 text-center">
+        <ScrollAnimation delay={0.6} className="mt-12 text-center">
           <a
             href="https://github.com/deeplukhi/DSA-Mini-Projects"
             target="_blank"
@@ -101,7 +106,7 @@ const ProjectsSection = () => {
           >
             View DSA Mini Projects <ArrowUpRight size={18} />
           </a>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
