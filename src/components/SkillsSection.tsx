@@ -1,0 +1,54 @@
+const skillCategories = [
+  {
+    title: "programmingLanguages",
+    skills: ["C", "C++"],
+  },
+  {
+    title: "backendDevelopment",
+    skills: ["Node.js", "Express.js", "MySQL"],
+  },
+  {
+    title: "coreConcepts",
+    skills: ["Data Structures & Algorithms", "Object Oriented Programming", "STL", "System Design Basics"],
+  },
+  {
+    title: "tools&Platforms",
+    skills: ["Git", "GitHub", "VS Code", "Linux (Basic)"],
+  },
+  {
+    title: "other",
+    skills: ["Open Source Contribution", "Problem Solving", "Clean Code Architecture"],
+  },
+];
+
+const SkillsSection = () => {
+  return (
+    <section id="skills" className="py-24 px-6 bg-secondary/30">
+      <div className="container mx-auto max-w-4xl">
+        <h2 className="section-title">Skills</h2>
+
+        <div className="space-y-12">
+          {skillCategories.map((category) => (
+            <div key={category.title}>
+              <h3 className="mono-text text-sm text-muted-foreground mb-4">
+                {`<${category.title}>`}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill) => (
+                  <span key={skill} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <h3 className="mono-text text-sm text-muted-foreground mt-4">
+                {`</${category.title}>`}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SkillsSection;
