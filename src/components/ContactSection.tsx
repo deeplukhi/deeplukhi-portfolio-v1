@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import ScrollAnimation from "./ScrollAnimation";
 
 const socialLinks = [
   {
@@ -31,67 +32,74 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-6">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="section-title">Contact</h2>
+        <ScrollAnimation>
+          <h2 className="section-title">Contact</h2>
+        </ScrollAnimation>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <p className="text-lg text-muted-foreground">
-              Feel free to reach out if you want to collaborate, have a question, 
-              or just want to say hi! 👋
-            </p>
+          <ScrollAnimation delay={0.1} direction="left">
+            <div className="space-y-8">
+              <p className="text-lg text-muted-foreground">
+                Feel free to reach out if you want to collaborate, have a question, 
+                or just want to say hi! 👋
+              </p>
 
-            <div className="space-y-4">
-              <a
-                href="mailto:deeplukhi11@gmail.com"
-                className="contact-link"
-              >
-                <Mail size={20} />
-                <span className="mono-text">deeplukhi11@gmail.com</span>
-              </a>
+              <div className="space-y-4">
+                <a
+                  href="mailto:deeplukhi11@gmail.com"
+                  className="contact-link"
+                >
+                  <Mail size={20} />
+                  <span className="mono-text">deeplukhi11@gmail.com</span>
+                </a>
 
-              <a
-                href="tel:+918460908591"
-                className="contact-link"
-              >
-                <Phone size={20} />
-                <span className="mono-text">+91 8460908591</span>
-              </a>
+                <a
+                  href="tel:+918460908591"
+                  className="contact-link"
+                >
+                  <Phone size={20} />
+                  <span className="mono-text">+91 8460908591</span>
+                </a>
 
-              <div className="contact-link">
-                <MapPin size={20} />
-                <span>Surat, India</span>
+                <div className="contact-link">
+                  <MapPin size={20} />
+                  <span>Surat, India</span>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* Social Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Connect With Me</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="experience-card flex items-center gap-3 hover:bg-secondary transition-colors"
-                >
-                  <link.icon />
-                  <span className="font-medium">{link.name}</span>
-                  <ArrowUpRight size={16} className="ml-auto" />
-                </a>
-              ))}
-            </div>
+          <ScrollAnimation delay={0.2} direction="right">
+            <div>
+              <h3 className="text-xl font-semibold mb-6">Connect With Me</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="experience-card flex items-center gap-3 hover:bg-secondary transition-colors"
+                  >
+                    <link.icon />
+                    <span className="font-medium">{link.name}</span>
+                    <ArrowUpRight size={16} className="ml-auto" />
+                  </a>
+                ))}
+              </div>
 
-            {/* Resume Button */}
-            <a
-              href="#"
-              className="btn-primary w-full mt-8 flex items-center justify-center gap-2"
-            >
-              Download Resume <ArrowUpRight size={18} />
-            </a>
-          </div>
+              {/* Resume Button */}
+              <a
+                href="/DEEP_LUKHI.pdf"
+                download="DEEP_LUKHI_Resume.pdf"
+                className="btn-primary w-full mt-8 flex items-center justify-center gap-2"
+              >
+                Download Resume <ArrowUpRight size={18} />
+              </a>
+            </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>
