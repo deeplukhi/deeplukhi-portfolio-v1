@@ -175,6 +175,32 @@
     color: hsl(var(--background));
   }
 
+  .btn-dot-hover {
+    @apply px-8 py-4 font-medium text-sm tracking-wider transition-all duration-300 border-2 relative;
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--foreground));
+    background: transparent;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .btn-dot-hover .dot {
+    @apply w-2 h-2 rounded-full transition-all duration-300;
+    background: hsl(var(--foreground));
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .btn-dot-hover:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .btn-dot-hover:hover .dot {
+    opacity: 1;
+    transform: scale(1);
+    background: hsl(var(--background));
+  }
+
   .marquee-text {
     @apply text-lg md:text-xl font-medium whitespace-nowrap;
     font-family: 'JetBrains Mono', monospace;

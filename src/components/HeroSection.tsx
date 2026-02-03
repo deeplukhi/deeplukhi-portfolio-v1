@@ -17,9 +17,11 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-12 opacity-0 animate-slide-up stagger-2">
             <a
-              href="#contact"
-              className="btn-outline flex items-center justify-center gap-2"
+              href="/DEEP_LUKHI.pdf"
+              download="DEEP_LUKHI_Resume.pdf"
+              className="btn-dot-hover flex items-center justify-center gap-2"
             >
+              <span className="dot"></span>
               viewResume
             </a>
             <a
