@@ -92,34 +92,45 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
 
+  html,
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  img,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @layer components {
   .hero-name {
-    @apply font-bold tracking-tighter leading-none;
-    font-size: clamp(3rem, 12vw, 10rem);
+    @apply font-normal tracking-wide leading-none uppercase;
+    font-size: clamp(3rem, 10vw, 8rem);
     font-family: 'Space Grotesk', sans-serif;
-    color: hsl(var(--hero-text-primary));
   }
 
-  .hero-title {
-    @apply font-normal tracking-wide;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+  .hero-role {
+    @apply font-normal tracking-wide text-muted-foreground;
     font-family: 'Space Grotesk', sans-serif;
-    color: hsl(var(--hero-text-secondary));
   }
 
   .nav-link {
-    @apply text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-60;
+    @apply text-base font-normal tracking-wide transition-all duration-300 hover:opacity-60;
     font-family: 'Space Grotesk', sans-serif;
   }
 
@@ -133,7 +144,8 @@
     background: hsl(var(--diagonal-bg));
     color: hsl(var(--diagonal-text));
     transform: rotate(-3deg) scale(1.1);
-    margin: 2rem -2rem;
+    margin: 2rem 0;
+    width: 100%;
   }
 
   .skill-tag {
@@ -153,54 +165,10 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  .btn-primary {
-    @apply px-8 py-4 font-medium text-sm tracking-wider transition-all duration-300;
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+
+  .btn-custom {
+    @apply w-56 h-14 flex items-center justify-center text-base font-medium tracking-wide transition-all duration-300;
     font-family: 'Space Grotesk', sans-serif;
-  }
-
-  .btn-primary:hover {
-    @apply opacity-90 scale-[1.02];
-  }
-
-  .btn-outline {
-    @apply px-8 py-4 font-medium text-sm tracking-wider transition-all duration-300 border-2;
-    border-color: hsl(var(--foreground));
-    color: hsl(var(--foreground));
-    background: transparent;
-    font-family: 'Space Grotesk', sans-serif;
-  }
-
-  .btn-outline:hover {
-    background: hsl(var(--foreground));
-    color: hsl(var(--background));
-  }
-
-  .btn-dot-hover {
-    @apply px-8 py-4 font-medium text-sm tracking-wider transition-all duration-300 border-2 relative;
-    border-color: hsl(var(--foreground));
-    color: hsl(var(--foreground));
-    background: transparent;
-    font-family: 'Space Grotesk', sans-serif;
-  }
-
-  .btn-dot-hover .dot {
-    @apply w-2 h-2 rounded-full transition-all duration-300;
-    background: hsl(var(--foreground));
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  .btn-dot-hover:hover {
-    background: hsl(var(--foreground));
-    color: hsl(var(--background));
-  }
-
-  .btn-dot-hover:hover .dot {
-    opacity: 1;
-    transform: scale(1);
-    background: hsl(var(--background));
   }
 
   .marquee-text {
@@ -232,6 +200,7 @@
   .animate-marquee {
     animation: marquee 20s linear infinite;
   }
+
 
   @keyframes marquee {
     0% {
