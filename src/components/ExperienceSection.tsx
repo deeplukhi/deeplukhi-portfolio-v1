@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, Trophy } from "lucide-react";
+import { Briefcase, Calendar, GraduationCap, Trophy } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
 const ExperienceSection = () => {
@@ -12,47 +12,53 @@ const ExperienceSection = () => {
         {/* Work Experience */}
         <ScrollAnimation delay={0.1}>
           <div className="mb-16">
-            <div className="experience-card">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-foreground text-background">
-                  <Briefcase size={24} />
+            <div className="experience-card p-6 flex flex-col md:flex-row gap-6 hover:bg-transparent">
+              <div className="shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                  <Briefcase size={20} />
                 </div>
-                <div>
+              </div>
+
+              <div className="flex-1">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                   <h3 className="text-xl font-semibold">Backend Developer Intern</h3>
-                  <p className="text-muted-foreground mono-text text-sm">Vailora Technolab</p>
+                  <div className="flex items-center gap-2 text-primary/80 text-sm font-medium bg-primary/5 py-1 px-3 rounded-full w-fit">
+                    <Calendar size={14} />
+                    Jan 2026 - Present
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
-                <span className="mono-text">Jan 2026 - Present</span>
-                <span>•</span>
-                <span className="mono-text">6 Months</span>
-                <span>•</span>
-                <span className="mono-text">Remote</span>
-              </div>
+                <h4 className="text-lg text-muted-foreground mb-4">Vailora Technolab</h4>
 
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-foreground mt-1.5">›</span>
-                  Working on backend development using Node.js & databases
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-foreground mt-1.5">›</span>
-                  Developing real-world software solutions
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-foreground mt-1.5">›</span>
-                  Building scalable APIs and business logic
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-foreground mt-1.5">›</span>
-                  Collaborating with team on production projects
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-foreground mt-1.5">›</span>
-                  Learning industry-level coding practices
-                </li>
-              </ul>
+                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
+                  <span className="mono-text">6 Months</span>
+                  <span>•</span>
+                  <span className="mono-text">Remote</span>
+                </div>
+
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-foreground mt-1.5">›</span>
+                    Working on backend development using Node.js & databases
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-foreground mt-1.5">›</span>
+                    Developing real-world software solutions
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-foreground mt-1.5">›</span>
+                    Building scalable APIs and business logic
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-foreground mt-1.5">›</span>
+                    Collaborating with team on production projects
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-foreground mt-1.5">›</span>
+                    Learning industry-level coding practices
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </ScrollAnimation>
@@ -61,10 +67,10 @@ const ExperienceSection = () => {
         <ScrollAnimation delay={0.2}>
           <h3 className="text-2xl font-bold mb-6">Education</h3>
         </ScrollAnimation>
-        
+
         <ScrollAnimation delay={0.3}>
-          <div className="experience-card mb-16">
-            <div className="flex items-start gap-4">
+          <div className="mb-16">
+            <div className="experience-card p-6 flex items-start gap-4">
               <div className="p-3 bg-foreground text-background">
                 <GraduationCap size={24} />
               </div>
@@ -85,7 +91,7 @@ const ExperienceSection = () => {
         <ScrollAnimation delay={0.4}>
           <h3 className="text-2xl font-bold mb-6">Achievements</h3>
         </ScrollAnimation>
-        
+
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { title: "550+ DSA Problems", subtitle: "Solved" },
@@ -94,7 +100,7 @@ const ExperienceSection = () => {
             { title: "Hackathon Participant", subtitle: "Team Events" },
           ].map((achievement, index) => (
             <ScrollAnimation key={achievement.title} delay={0.5 + index * 0.1}>
-              <div className="experience-card flex items-center gap-4">
+              <div className="experience-card p-6 flex items-center gap-4">
                 <Trophy size={24} className="text-foreground flex-shrink-0" />
                 <div>
                   <div className="font-semibold">{achievement.title}</div>

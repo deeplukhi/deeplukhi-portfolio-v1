@@ -105,13 +105,15 @@
 
 @layer components {
   .hero-name {
-    @apply text-[clamp(3rem,12vw,10rem)] font-bold tracking-tighter leading-none;
+    @apply font-bold tracking-tighter leading-none;
+    font-size: clamp(3rem, 12vw, 10rem);
     font-family: 'Space Grotesk', sans-serif;
     color: hsl(var(--hero-text-primary));
   }
 
   .hero-title {
-    @apply text-[clamp(1rem,2vw,1.5rem)] font-normal tracking-wide;
+    @apply font-normal tracking-wide;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-family: 'Space Grotesk', sans-serif;
     color: hsl(var(--hero-text-secondary));
   }
@@ -235,6 +237,7 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
@@ -252,6 +255,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -262,15 +266,30 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
 }

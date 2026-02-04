@@ -108,7 +108,7 @@ const ProjectsSection = () => {
           </a>
         </ScrollAnimation>
       </div>
-    </section>
+    </section >
   );
 };
 

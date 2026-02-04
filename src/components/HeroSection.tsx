@@ -25,7 +25,7 @@ const HeroSection = () => {
               viewResume
             </a>
             <a
-              href="mailto:deeplukhi11@gmail.com"
+              href="#contact"
               className="btn-primary flex items-center justify-center gap-2"
             >
               sayHello
