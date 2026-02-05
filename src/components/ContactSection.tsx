@@ -31,7 +31,7 @@ const socialLinks = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 px-6 relative overflow-hidden">
+    <section id="contact" className="py-24 px-6 relative overflow-hidden bg-secondary/30">
       {/* Background Gradient */}
       <div className="absolute top-1/2 left-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 -z-10" />
 

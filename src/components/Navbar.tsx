@@ -29,16 +29,16 @@ const Navbar = () => {
               </a>
             ))}
           </div>
-
-          {/* Mobile Menu Button - Positioned absolutely to the right on mobile */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden absolute right-0 p-2"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
+
+        {/* Mobile Menu Button - Absolute Top Right */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden absolute top-5 right-6 p-2 z-50 text-foreground"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
 
         {/* Mobile Navigation */}
         {isOpen && (

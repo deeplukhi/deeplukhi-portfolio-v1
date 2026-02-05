@@ -156,10 +156,9 @@
   }
 
   .about-text {
-    @apply mx-auto;
+    @apply mx-auto w-full md:w-[70vw] lg:w-[35vw];
     line-height: 2.5 !important;
     text-align: center;
-    width: 35vw;
   }
 
 

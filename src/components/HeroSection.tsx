@@ -12,36 +12,80 @@ const HeroSection = () => {
           <div className="flex flex-col items-center justify-center w-full mb-12">
             <div className="mb-16 w-full max-w-4xl">
               {/* First Name with Subtitle */}
-              <div className="flex items-baseline gap-1 mb-2 justify-center animate-fade-in-custom" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-                <h1 className="hero-name text-foreground">DEEP</h1>
-                <span className="hero-subtitle">softwareEngineer</span>
+              <div className="flex items-baseline gap-1 mb-2 justify-center">
+                <h1 className="hero-name text-foreground flex">
+                  {Array.from("DEEP").map((letter, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.1, delay: index * 0.1 }}
+                    >
+                      {letter}
+                    </motion.span>
+                  ))}
+                </h1>
+                <motion.span
+                  className="hero-subtitle"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  softwareEngineer
+                </motion.span>
               </div>
 
-              {/* Last Name with Highlight - offset to start at second E of DEEP */}
+              {/* Last Name with Highlight - Responsive Alignment */}
               <div
-                className="flex items-center animate-fade-in-custom"
-                style={{ paddingLeft: 'clamp(27rem, 22vw,10rem)', animationDelay: '0.3s', animationFillMode: 'both' }}
+                className="flex items-center pl-[37%] md:pl-[clamp(27rem,22vw,10rem)]"
               >
-                <h1 className="hero-name whitespace-nowrap text-foreground">
-                  LUK<span className="hero-name-highlight">HI</span>
-                </h1>
+                <div className="hero-name whitespace-nowrap text-foreground flex">
+                  {Array.from("LUK").map((letter, index) => (
+                    <motion.span
+                      key={`luk-${index}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.1, delay: 0.4 + index * 0.1 }}
+                    >
+                      {letter}
+                    </motion.span>
+                  ))}
+                  <span className="hero-name-highlight flex">
+                    {Array.from("HI").map((letter, index) => (
+                      <motion.span
+                        key={`hi-${index}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.1, delay: 0.7 + index * 0.1 }}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </span>
+                </div>
                 <div className="h-[4px] bg-foreground flex-grow ml-0" style={{ marginRight: '-100vw' }}></div>
-                <div className="h-[4px] bg-foreground flex-grow ml-0 animate-scale-in-line" style={{ marginRight: '-100vw', animationDelay: '0.5s', animationFillMode: 'both' }}></div>
+                <motion.div
+                  className="h-[4px] bg-foreground flex-grow ml-0"
+                  style={{ marginRight: '-100vw', transformOrigin: 'left' }}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
+                />
               </div>
             </div>
 
-            {/* Buttons - Reduced Top Margin and Distance */}
-            <div className="flex items-center gap-6 mt-16 opacity-0 animate-slide-up stagger-2">
+            {/* Buttons - Mobile Responsive Layout */}
+            <div className="flex flex-row items-center justify-center gap-3 md:gap-6 mt-12 md:mt-16 opacity-0 animate-slide-up stagger-2 w-full px-2">
               <a
                 href="/DEEP_LUKHI.pdf"
                 download="DEEP_LUKHI_Resume.pdf"
-                className="btn-custom border border-foreground text-foreground h-16 w-64 text-lg"
+                className="btn-custom border border-foreground text-foreground h-12 md:h-16 flex-1 max-w-[160px] md:max-w-[256px] text-sm md:text-lg"
               >
                 viewResume
               </a>
               <a
                 href="#contact"
-                className="btn-custom bg-foreground text-background hover:bg-foreground/90 border border-foreground h-16 w-64 text-lg"
+                className="btn-custom bg-foreground text-background hover:bg-foreground/90 border border-foreground h-12 md:h-16 flex-1 max-w-[160px] md:max-w-[256px] text-sm md:text-lg"
               >
                 sayHello
               </a>
