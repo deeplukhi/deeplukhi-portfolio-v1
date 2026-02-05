@@ -140,7 +140,7 @@
   }
 
   .nav-link {
-    @apply text-base font-normal transition-all duration-300 hover:opacity-60;
+    @apply text-base font-normal transition-all duration-300;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -192,7 +192,7 @@
   .marquee-text {
     @apply text-lg md:text-xl font-medium whitespace-nowrap;
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .section-divider {
@@ -325,4 +325,74 @@
       transform: scaleX(1);
     }
   }
+}
+
+/* Add these to your index.css file */
+
+@layer utilities {
+  /* ... existing utilities ... */
+
+  /* Enhanced cursor hover effect */
+  .cursor-hover-element {
+
+    position: relative;
+  }
+
+  /* Larger cursor effects for all interactive elements */
+  button,
+  a,
+  .card,
+  .btn-custom,
+  .skill-tag,
+  .project-card,
+  .contact-link,
+  .nav-link,
+  [role="button"],
+  [role="link"],
+  [data-cursor="hover"] {
+    transition: all 0.2s ease-out;
+  }
+
+  /* Optional: Add subtle scale effect to the hovered element */
+  button:hover,
+  a:hover,
+  .card:hover,
+  .btn-custom:hover,
+  .skill-tag:hover,
+  .project-card:hover,
+  .contact-link:hover,
+  .nav-link:hover,
+  [role="button"]:hover,
+  [role="link"]:hover,
+  [data-cursor="hover"]:hover {
+    transform: translateZ(0);
+  }
+
+  /* Special class for elements that should trigger SUPER large cursor */
+
+
+}
+
+/* Make sure body hides default cursor */
+
+
+/* Optional: Add a pseudo-element glow effect on hovered items */
+.cursor-hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cursor-hover-effect:hover::after {
+  width: 60px;
+  height: 60px;
 }

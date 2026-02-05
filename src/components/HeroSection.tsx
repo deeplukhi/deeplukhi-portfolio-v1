@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-background pt-32 lg:pt-40">
+    <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-background pt-40 lg:pt-56">
       <div className="container mx-auto px-6 relative z-10 flex-grow flex flex-col justify-center">
         <div className="flex flex-col relative max-w-5xl mx-auto w-full">
 
@@ -31,17 +31,17 @@ const HeroSection = () => {
             </div>
 
             {/* Buttons - Reduced Top Margin and Distance */}
-            <div className="flex items-center gap-6 mt-8 opacity-0 animate-slide-up stagger-2">
+            <div className="flex items-center gap-6 mt-16 opacity-0 animate-slide-up stagger-2">
               <a
                 href="/DEEP_LUKHI.pdf"
                 download="DEEP_LUKHI_Resume.pdf"
-                className="btn-custom border border-foreground text-foreground hover:bg-foreground hover:text-background h-12 w-48 text-base"
+                className="btn-custom border border-foreground text-foreground h-16 w-64 text-lg"
               >
                 viewResume
               </a>
               <a
                 href="#contact"
-                className="btn-custom bg-foreground text-background hover:bg-foreground/90 border border-foreground h-12 w-48 text-base"
+                className="btn-custom bg-foreground text-background hover:bg-foreground/90 border border-foreground h-16 w-64 text-lg"
               >
                 sayHello
               </a>
@@ -54,13 +54,13 @@ const HeroSection = () => {
 
       {/* Diagonal Skills Banner - Scroll Reveal */}
       <motion.div
-        className="mt-12 mb-32 relative w-full"
+        className="mt-24 mb-32 relative w-full"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="relative transform -rotate-2 scale-105 origin-center">
+        <div className="relative transform -rotate-3 scale-105 origin-center">
           {/* Shadow Layer */}
           <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 pointer-events-none" />
 

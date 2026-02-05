@@ -5,7 +5,7 @@ const navItems = [
   { label: "home", href: "#home" },
   { label: "about", href: "#about" },
   { label: "projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "workExperience", href: "#experience" },
   { label: "skills", href: "#skills" },
   { label: "contact", href: "#contact" },
 ];
@@ -23,7 +23,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="nav-link text-base lowercase tracking-wider hover:text-foreground/70"
+                className="nav-link text-base  tracking-wider"
               >
                 {item.label}
               </a>
