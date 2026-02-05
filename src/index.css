@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -97,7 +97,8 @@
 
   html,
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'IBM Plex Mono', monospace;
     overflow-x: hidden;
     max-width: 100%;
     width: 100%;
@@ -119,24 +120,32 @@
 
 @layer components {
   .hero-name {
-    @apply font-normal tracking-wide leading-none uppercase;
-    font-size: clamp(3rem, 10vw, 8rem);
-    font-family: 'Space Grotesk', sans-serif;
+    @apply font-normal leading-none;
+    font-size: clamp(4rem, 13vw, 10rem);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.5px;
   }
 
   .hero-role {
-    @apply font-normal tracking-wide text-muted-foreground;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply font-normal text-muted-foreground;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.5px;
   }
 
   .nav-link {
-    @apply text-base font-normal tracking-wide transition-all duration-300 hover:opacity-60;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply text-base font-normal transition-all duration-300 hover:opacity-60;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.5px;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold tracking-tight mb-12;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply text-4xl md:text-5xl font-bold mb-12;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.5px;
   }
 
   .diagonal-banner {
@@ -152,7 +161,7 @@
     @apply px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105;
     background: hsl(var(--skill-tag-bg));
     color: hsl(var(--skill-tag-text));
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
   }
 
   .project-card {
@@ -162,18 +171,21 @@
   }
 
   .mono-text {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
   }
 
 
   .btn-custom {
-    @apply w-56 h-14 flex items-center justify-center text-base font-medium tracking-wide transition-all duration-300;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply w-64 h-16 flex items-center justify-center text-lg font-medium transition-all duration-300;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
 
   .marquee-text {
     @apply text-lg md:text-xl font-medium whitespace-nowrap;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
   }
 
   .section-divider {
@@ -188,7 +200,7 @@
 
   .contact-link {
     @apply flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:opacity-60;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
   }
 }
 

@@ -99,12 +99,12 @@ const ProjectsSection = () => {
         {/* DSA Mini Projects Link */}
         <ScrollAnimation delay={0.6} className="mt-12 text-center">
           <a
-            href="https://github.com/deeplukhi/DSA-Mini-Projects"
+            href="https://github.com/deeplukhi"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 btn-outline"
           >
-            View DSA Mini Projects <ArrowUpRight size={18} />
+            For More Projects <ArrowUpRight size={18} />
           </a>
         </ScrollAnimation>
       </div>

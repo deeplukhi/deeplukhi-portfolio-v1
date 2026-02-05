@@ -13,11 +13,11 @@ const HeroSection = () => {
 
             {/* Top Row: DEEP + Role */}
             <div className="flex items-baseline gap-4 md:gap-8 opacity-0 animate-slide-up relative -left-12">
-              <h1 className="hero-name text-foreground uppercase">
+              <h1 className="hero-name text-foreground">
                 DEEP
               </h1>
               <span className="hero-role text-muted-foreground/50 !text-sm md:!text-xl font-normal lowercase tracking-wide">
-                software Developer
+                software Engineer
               </span>
             </div>
 
@@ -28,8 +28,7 @@ const HeroSection = () => {
                 {/* Black Block - Starts -20px left of text, extends to right viewport edge */}
                 <div className="absolute top-[10%] bottom-[15%] left-[-10px] w-[100vw] bg-foreground -z-10 pointer-events-none" />
 
-                {/* Text with Difference Blend Mode */}
-                <h1 className="hero-name text-white mix-blend-difference relative z-10 uppercase">
+                <h1 className="hero-name text-white mix-blend-difference relative z-10">
                   LUKHI
                 </h1>
               </div>
