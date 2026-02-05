@@ -1,5 +1,5 @@
 
-import { ArrowUpRight } from "lucide-react";
+
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -9,43 +9,39 @@ const HeroSection = () => {
         <div className="flex flex-col relative max-w-5xl mx-auto w-full">
 
           {/* Centered Content Wrapper */}
-          <div className="flex flex-col items-center justify-center w-full mb-32">
+          <div className="flex flex-col items-center justify-center w-full mb-12">
+            <div className="mb-16 w-full max-w-4xl">
+              {/* First Name with Subtitle */}
+              <div className="flex items-baseline gap-1 mb-2 justify-center animate-fade-in-custom" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+                <h1 className="hero-name text-foreground">DEEP</h1>
+                <span className="hero-subtitle">softwareEngineer</span>
+              </div>
 
-            {/* Top Row: DEEP + Role */}
-            <div className="flex items-baseline gap-4 md:gap-8 opacity-0 animate-slide-up relative -left-12">
-              <h1 className="hero-name text-foreground">
-                DEEP
-              </h1>
-              <span className="hero-role text-muted-foreground/50 !text-sm md:!text-xl font-normal lowercase tracking-wide">
-                software Engineer
-              </span>
-            </div>
-
-            {/* Bottom Row: LUKHI + Black Block */}
-            <div className="relative mt-[-2vw] md:mt-[-1vw] opacity-0 animate-slide-up stagger-1 ml-12">
-              {/* LUKHI Container */}
-              <div className="relative">
-                {/* Black Block - Starts -20px left of text, extends to right viewport edge */}
-                <div className="absolute top-[10%] bottom-[15%] left-[-10px] w-[100vw] bg-foreground -z-10 pointer-events-none" />
-
-                <h1 className="hero-name text-white mix-blend-difference relative z-10">
-                  LUKHI
+              {/* Last Name with Highlight - offset to start at second E of DEEP */}
+              <div
+                className="flex items-center animate-fade-in-custom"
+                style={{ paddingLeft: 'clamp(27rem, 22vw,10rem)', animationDelay: '0.3s', animationFillMode: 'both' }}
+              >
+                <h1 className="hero-name whitespace-nowrap text-foreground">
+                  LUK<span className="hero-name-highlight">HI</span>
                 </h1>
+                <div className="h-[4px] bg-foreground flex-grow ml-0" style={{ marginRight: '-100vw' }}></div>
+                <div className="h-[4px] bg-foreground flex-grow ml-0 animate-scale-in-line" style={{ marginRight: '-100vw', animationDelay: '0.5s', animationFillMode: 'both' }}></div>
               </div>
             </div>
 
-            {/* Buttons - Increased Top Margin */}
-            <div className="flex items-center gap-6 mt-24 opacity-0 animate-slide-up stagger-2">
+            {/* Buttons - Reduced Top Margin and Distance */}
+            <div className="flex items-center gap-6 mt-8 opacity-0 animate-slide-up stagger-2">
               <a
                 href="/DEEP_LUKHI.pdf"
                 download="DEEP_LUKHI_Resume.pdf"
-                className="btn-custom border border-foreground text-foreground hover:bg-foreground hover:text-background"
+                className="btn-custom border border-foreground text-foreground hover:bg-foreground hover:text-background h-12 w-48 text-base"
               >
                 viewResume
               </a>
               <a
                 href="#contact"
-                className="btn-custom bg-foreground text-background hover:bg-foreground/90 border border-foreground"
+                className="btn-custom bg-foreground text-background hover:bg-foreground/90 border border-foreground h-12 w-48 text-base"
               >
                 sayHello
               </a>
@@ -58,44 +54,44 @@ const HeroSection = () => {
 
       {/* Diagonal Skills Banner - Scroll Reveal */}
       <motion.div
-        className="diagonal-banner mt-32"
+        className="mt-12 mb-32 relative w-full"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="flex animate-marquee">
-          <div className="flex gap-8 items-center whitespace-nowrap px-8">
-            <span className="marquee-text">webDevelopment</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">backendDevelopment</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">dataStructures</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">algorithms</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">problemSolving</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">systemDesign</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">cleanCode</span>
-            <span className="text-2xl">&lt;&gt;</span>
-          </div>
-          <div className="flex gap-8 items-center whitespace-nowrap px-8">
-            <span className="marquee-text">webDevelopment</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">backendDevelopment</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">dataStructures</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">algorithms</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">problemSolving</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">systemDesign</span>
-            <span className="text-2xl">&lt;&gt;</span>
-            <span className="marquee-text">cleanCode</span>
-            <span className="text-2xl">&lt;&gt;</span>
+        <div className="relative transform -rotate-2 scale-105 origin-center">
+          {/* Shadow Layer */}
+          <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 pointer-events-none" />
+
+          {/* White Card Layer */}
+          <div className="relative w-full bg-white border border-black py-6">
+            <div className="flex animate-marquee text-black">
+              <div className="flex gap-8 items-center whitespace-nowrap px-8">
+                <span className="marquee-text">webDevelopment</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">dataStructures</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">algorithms</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">systemDesign</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">cleanCode</span>
+                <span className="text-2xl">&lt;&gt;</span>
+              </div>
+              <div className="flex gap-8 items-center whitespace-nowrap px-8">
+                <span className="marquee-text">webDevelopment</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">dataStructures</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">algorithms</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">systemDesign</span>
+                <span className="text-2xl">&lt;&gt;</span>
+                <span className="marquee-text">cleanCode</span>
+                <span className="text-2xl">&lt;&gt;</span>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>

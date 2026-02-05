@@ -102,9 +102,9 @@ const ProjectsSection = () => {
             href="https://github.com/deeplukhi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 btn-outline"
+            className="btn-custom mx-auto border border-border hover:bg-muted"
           >
-            For More Projects <ArrowUpRight size={18} />
+            For More Projects <ArrowUpRight size={18} className="ml-2" />
           </a>
         </ScrollAnimation>
       </div>

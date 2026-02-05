@@ -14,8 +14,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm pt-8">
-      <div className="container mx-auto px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm pt-4">
+      <div className="container mx-auto px-6 py-2">
         <div className="flex items-center justify-center relative">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-16 md:gap-24">
@@ -23,7 +23,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="nav-link text-sm lowercase tracking-wider hover:text-foreground/70"
+                className="nav-link text-base lowercase tracking-wider hover:text-foreground/70"
               >
                 {item.label}
               </a>

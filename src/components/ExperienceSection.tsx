@@ -65,7 +65,7 @@ const ExperienceSection = () => {
 
         {/* Education */}
         <ScrollAnimation delay={0.2}>
-          <h3 className="text-2xl font-bold mb-6">Education</h3>
+          <h3 className="section-title">Education</h3>
         </ScrollAnimation>
 
         <ScrollAnimation delay={0.3}>
@@ -89,7 +89,7 @@ const ExperienceSection = () => {
 
         {/* Achievements */}
         <ScrollAnimation delay={0.4}>
-          <h3 className="text-2xl font-bold mb-6">Achievements</h3>
+          <h3 className="section-title">Achievements</h3>
         </ScrollAnimation>
 
         <div className="grid sm:grid-cols-2 gap-4">

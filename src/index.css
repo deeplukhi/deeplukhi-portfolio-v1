@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Michroma&family=Montserrat:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -98,7 +98,7 @@
   html,
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', 'Montserrat', sans-serif;
     overflow-x: hidden;
     max-width: 100%;
     width: 100%;
@@ -116,15 +116,20 @@
     max-width: 100%;
     height: auto;
   }
+
+  ::selection {
+    background-color: #000;
+    color: #efefef;
+  }
 }
 
 @layer components {
   .hero-name {
     @apply font-normal leading-none;
-    font-size: clamp(4rem, 13vw, 10rem);
-    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(2rem, 7vw, 5rem);
+    font-family: 'Michroma', sans-serif;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: -1px;
   }
 
   .hero-role {
@@ -142,20 +147,22 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-12;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    @apply uppercase text-center font-bold mb-12;
+    color: rgba(0, 0, 0, .1);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4vw;
+    letter-spacing: 5px;
+    margin: 4vh 0;
   }
 
-  .diagonal-banner {
-    @apply relative overflow-hidden py-6;
-    background: hsl(var(--diagonal-bg));
-    color: hsl(var(--diagonal-text));
-    transform: rotate(-3deg) scale(1.1);
-    margin: 2rem 0;
-    width: 100%;
+  .about-text {
+    @apply mx-auto;
+    line-height: 2.5 !important;
+    text-align: center;
+    width: 35vw;
   }
+
+
 
   .skill-tag {
     @apply px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105;
@@ -272,5 +279,50 @@
 
   .stagger-5 {
     animation-delay: 0.5s;
+  }
+
+  /* User requested Hero Animations */
+  .hero-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .hero-name-highlight {
+    /* No specific style provided, assuming inherit or maybe primary color? Keeping neutral for now or maybe inverse if intended to be covered */
+    color: inherit;
+  }
+
+  .animate-fade-in-custom {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in-line {
+    animation: scale-in-line 0.8s ease-out forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in-line {
+    from {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
   }
 }

@@ -5,29 +5,20 @@ const AboutSection = () => {
     <section id="about" className="py-24 px-6">
       <div className="container mx-auto max-w-4xl">
         <ScrollAnimation>
-          <h2 className="section-title">About</h2>
+          <div className="flex flex-col items-center mb-12">
+            <h2 className="section-title">About</h2>
+          </div>
         </ScrollAnimation>
-        
-        <div className="space-y-6">
-          <ScrollAnimation delay={0.1}>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              Hey<span className="inline-block animate-pulse">👋</span>,! I'm <span className="text-foreground font-semibold">Deep Lukhi</span>, 
-              a passionate Software Engineering undergraduate focused on backend development and Data Structures & Algorithms. 
-            </p>
-          </ScrollAnimation>
-          
-          <ScrollAnimation delay={0.2}>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              I specialize in writing clean, scalable, and efficient code using <span className="mono-text text-foreground">C++</span> and{" "}
-              <span className="mono-text text-foreground">Node.js</span>. Having solved{" "}
-              <span className="text-foreground font-semibold">550+ DSA problems</span>, I've built multiple real-world projects 
-              involving APIs, authentication systems, and graph-based engines.
-            </p>
-          </ScrollAnimation>
 
-          <ScrollAnimation delay={0.3}>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              I am continuously learning system design and modern backend practices to build high-quality software 
+        <div className="space-y-6 text-center mx-auto">
+          <ScrollAnimation delay={0.1}>
+            <p className="about-text text-foreground text-sm md:text-base font-mono">
+              Hey<span className="inline-block animate-pulse">👋</span>,! I'm Deep Lukhi,
+              a passionate Software Engineering undergraduate focused on backend development and Data Structures & Algorithms.
+              I specialize in writing clean, scalable, and efficient code using C++ and Node.js. Having solved
+              550+ DSA problems, I've built multiple real-world projects
+              involving APIs, authentication systems, and graph-based engines.
+              I am continuously learning system design and modern backend practices to build high-quality software
               that makes a difference.
             </p>
           </ScrollAnimation>
