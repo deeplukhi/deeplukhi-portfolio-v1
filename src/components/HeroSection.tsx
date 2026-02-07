@@ -1,6 +1,7 @@
 
 
 import { motion } from "framer-motion";
+import GlitchWrapper from "./GlitchWrapper";
 
 const HeroSection = () => {
   return (
@@ -14,16 +15,18 @@ const HeroSection = () => {
               {/* First Name with Subtitle */}
               <div className="flex items-baseline gap-1 mb-2 justify-center">
                 <h1 className="hero-name text-foreground flex">
-                  {Array.from("DEEP").map((letter, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.1, delay: index * 0.1 }}
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}
+                  <GlitchWrapper text="DEEP" className="flex">
+                    {Array.from("DEEP").map((letter, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.1, delay: index * 0.1 }}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </GlitchWrapper>
                 </h1>
                 <motion.span
                   className="hero-subtitle"
@@ -40,28 +43,30 @@ const HeroSection = () => {
                 className="flex items-center pl-[37%] md:pl-[clamp(27rem,22vw,10rem)]"
               >
                 <div className="hero-name whitespace-nowrap text-foreground flex">
-                  {Array.from("LUK").map((letter, index) => (
-                    <motion.span
-                      key={`luk-${index}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.1, delay: 0.4 + index * 0.1 }}
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}
-                  <span className="hero-name-highlight flex">
-                    {Array.from("HI").map((letter, index) => (
+                  <GlitchWrapper text="LUKHI" className="flex">
+                    {Array.from("LUK").map((letter, index) => (
                       <motion.span
-                        key={`hi-${index}`}
+                        key={`luk-${index}`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.1, delay: 0.7 + index * 0.1 }}
+                        transition={{ duration: 0.1, delay: 0.4 + index * 0.1 }}
                       >
                         {letter}
                       </motion.span>
                     ))}
-                  </span>
+                    <span className="hero-name-highlight flex">
+                      {Array.from("HI").map((letter, index) => (
+                        <motion.span
+                          key={`hi-${index}`}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.1, delay: 0.7 + index * 0.1 }}
+                        >
+                          {letter}
+                        </motion.span>
+                      ))}
+                    </span>
+                  </GlitchWrapper>
                 </div>
                 <div className="h-[4px] bg-foreground flex-grow ml-0" style={{ marginRight: '-100vw' }}></div>
                 <motion.div
