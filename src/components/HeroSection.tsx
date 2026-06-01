@@ -80,7 +80,7 @@ const HeroSection = () => {
             </div>
 
             {/* Buttons - Mobile Responsive Layout */}
-            <div className="flex flex-row items-center justify-center gap-3 md:gap-6 mt-12 md:mt-16 opacity-0 animate-slide-up stagger-2 w-full px-2">
+            <div className="flex flex-row items-center justify-center gap-3 md:gap-6 mt-12 md:mt-16  w-full px-2">
               <a
                 href="/DEEP_LUKHI.pdf"
                 download="DEEP_LUKHI_Resume.pdf"
@@ -101,14 +101,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Diagonal Skills Banner - Scroll Reveal */}
-      <motion.div
-        className="mt-24 mb-32 relative w-full"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      {/* Diagonal Skills Banner */}
+      <div className="mt-24 mb-32 relative w-full">
         <div className="relative transform -rotate-3 scale-105 origin-center">
           {/* Shadow Layer */}
           <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 pointer-events-none" />
@@ -143,7 +137,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

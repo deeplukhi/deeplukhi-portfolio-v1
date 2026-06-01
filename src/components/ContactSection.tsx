@@ -46,45 +46,45 @@ const ContactSection = () => {
           </div>
         </ScrollAnimation>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left Column: Contact Info & Socials */}
           <div className="space-y-8">
             <ScrollAnimation delay={0.1} direction="left">
-              <div className="bg-secondary/30 p-8 rounded-2xl backdrop-blur-sm border border-border/50 h-full">
+              <div className="bg-secondary/30 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-border/50 h-full">
                 <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
 
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <a
                     href="mailto:deeplukhi11@gmail.com"
-                    className="contact-link flex items-center gap-4 p-4 rounded-xl hover:bg-background/50 transition-colors"
+                    className="contact-link flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl hover:bg-background/50 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                       <Mail size={20} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm text-muted-foreground block mb-0.5">Email</span>
-                      <span className="mono-text font-medium">deeplukhi11@gmail.com</span>
+                      <span className="mono-text font-medium break-all">deeplukhi11@gmail.com</span>
                     </div>
                   </a>
 
                   <a
                     href="tel:+918460908591"
-                    className="contact-link flex items-center gap-4 p-4 rounded-xl hover:bg-background/50 transition-colors"
+                    className="contact-link flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl hover:bg-background/50 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                       <Phone size={20} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm text-muted-foreground block mb-0.5">Phone</span>
-                      <span className="mono-text font-medium">+91 8460908591</span>
+                      <span className="mono-text font-medium break-all">+91 8460908591</span>
                     </div>
                   </a>
 
-                  <div className="contact-link flex items-center gap-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <div className="contact-link flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl hover:bg-background/50 transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                       <MapPin size={20} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm text-muted-foreground block mb-0.5">Location</span>
                       <span className="font-medium">Surat, India</span>
                     </div>

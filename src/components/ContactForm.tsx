@@ -44,7 +44,7 @@ const ContactForm = () => {
     }
 
     return (
-        <div className="bg-secondary/30 p-8 rounded-2xl backdrop-blur-sm border border-border/50">
+        <div className="bg-secondary/30 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-border/50">
             <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
