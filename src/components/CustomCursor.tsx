@@ -5,11 +5,16 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(
+    () => window.matchMedia("(pointer: coarse)").matches
+  );
 
   const cursorRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const requestRef = useRef<number>();
 
   useEffect(() => {
+    setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+
     // Enhanced function to detect interactive elements
     const isInteractiveElement = (element: HTMLElement): boolean => {
       if (!element) return false;
@@ -146,7 +151,7 @@ const CustomCursor = () => {
     return () => cancelAnimationFrame(requestRef.current!);
   }, []);
 
-  if (!isVisible) return null;
+  if (!isVisible || isTouchDevice) return null;
 
   return (
     <div
