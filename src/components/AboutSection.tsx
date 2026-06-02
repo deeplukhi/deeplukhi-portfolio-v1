@@ -14,13 +14,7 @@ const AboutSection = () => {
         <div className="space-y-6 text-center mx-auto">
           <ScrollAnimation delay={0.1}>
             <p className="about-text text-foreground text-sm md:text-base font-mono">
-              Hey<span className="inline-block animate-pulse">👋</span>,! I'm Deep Lukhi,
-              a passionate Software Engineering undergraduate focused on backend development and Data Structures & Algorithms.
-              I specialize in writing clean, scalable, and efficient code using C++ and Node.js. Having solved
-              550+ DSA problems, I've built multiple real-world projects
-              involving APIs, authentication systems, and graph-based engines.
-              I am continuously learning system design and modern backend practices to build high-quality software
-              that makes a difference.
+              Hey<span className="inline-block animate-pulse">👋</span>! I'm Deep Lukhi, a Software Engineering undergrad passionate about backend development, DSA, and system design. I build clean, scalable systems with C++ and Node.js — having solved 550+ DSA problems and built real-world APIs, auth systems, and graph-based engines.
             </p>
           </ScrollAnimation>
         </div>

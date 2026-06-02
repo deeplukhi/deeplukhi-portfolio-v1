@@ -3,11 +3,11 @@ import ScrollAnimation from "./ScrollAnimation";
 const skillCategories = [
   {
     title: "programmingLanguages",
-    skills: ["C", "C++"],
+    skills: ["C", "C++", "JavaScript"],
   },
   {
     title: "backendDevelopment",
-    skills: ["Node.js", "Express.js", "MySQL"],
+    skills: ["Node.js", "Express.js", "MySQL", "PostgreSQL", "Prisma"],
   },
   {
     title: "coreConcepts",
@@ -15,7 +15,7 @@ const skillCategories = [
   },
   {
     title: "tools&Platforms",
-    skills: ["Git", "GitHub", "VS Code", "Linux (Basic)"],
+    skills: ["Git", "GitHub", "VS Code", "Linux (Basic)", "Docker", "Postman", "Swagger", "Grafana"],
   },
   {
     title: "other",
