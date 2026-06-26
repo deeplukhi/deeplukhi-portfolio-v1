@@ -1,18 +1,22 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
 const projects = [
   {
-    title: "Inventory Management API",
-    description: "RESTful API using Node.js, Express, and MySQL with full CRUD operations, validation, search & pagination support, and structured MVC architecture.",
-    tags: ["Node.js", "Express", "MySQL", "REST API"],
-    github: "https://github.com/deeplukhi/inventory-management-api",
+    title: "SnippetVault",
+    description: "Modern code snippet manager — Create, organize, search, and share code snippets with syntax highlighting, tags, collections, and dark mode.",
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Monaco Editor", "OAuth"],
+    github: "https://github.com/deeplukhi/Snippet-Manager-Frontend",
+    githubBackend: "https://github.com/deeplukhi/Snippet-Manager-Backend",
+    live: "https://snippetvault-v1.vercel.app/",
   },
   {
-    title: "Authentication API",
-    description: "Secure authentication system using JWT & bcrypt with login, register, token verification, cookie-based session handling, and modular structure.",
-    tags: ["Node.js", "JWT", "bcrypt", "Security"],
-    github: "https://github.com/deeplukhi/Authentication-API",
+    title: "ClipWise",
+    description: "YouTube Video Summarizer — AI-powered transcript analysis that generates summaries, key points, and multiple export formats from any YouTube video.",
+    tags: ["React", "TypeScript", "Express", "Prisma", "AI", "Socket.io"],
+    github: "https://github.com/deeplukhi/ClipWise-frontend",
+    githubBackend: "https://github.com/deeplukhi/ClipWise-backend",
+    live: "https://clipwisee.vercel.app/",
   },
   {
     title: "Flight Route Planner",
@@ -60,15 +64,39 @@ const ProjectsSection = () => {
                   <h3 className="text-xl font-semibold group-hover:text-foreground transition-colors">
                     {project.title}
                   </h3>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 hover:bg-muted rounded-full transition-colors"
-                    aria-label={`View ${project.title} on GitHub`}
-                  >
-                    <Github size={20} />
-                  </a>
+                  <div className="flex gap-1">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 hover:bg-muted rounded-full transition-colors"
+                        aria-label={`View ${project.title} live`}
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 hover:bg-muted rounded-full transition-colors"
+                      aria-label={`View ${project.title} on GitHub`}
+                    >
+                      <Github size={20} />
+                    </a>
+                    {project.githubBackend && (
+                      <a
+                        href={project.githubBackend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 hover:bg-muted rounded-full transition-colors"
+                        aria-label={`View ${project.title} backend on GitHub`}
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -83,29 +111,29 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-6 text-sm font-medium hover:gap-2 transition-all mono-text"
-                >
-                  github <ArrowUpRight size={16} />
-                </a>
               </div>
             </ScrollAnimation>
           ))}
         </div>
 
-        {/* DSA Mini Projects Link */}
-        <ScrollAnimation delay={0.6} className="mt-12 text-center">
-          <a
-            href="https://github.com/deeplukhi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-custom mx-auto border border-border hover:bg-muted"
-          >
-            For More Projects <ArrowUpRight size={18} className="ml-2" />
-          </a>
+        {/* View All Projects Link */}
+        <ScrollAnimation delay={0.6} className="mt-12">
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/projects"
+              className="btn-custom border border-border hover:bg-muted"
+            >
+              View All Projects <ArrowUpRight size={18} className="ml-2" />
+            </a>
+            <a
+              href="https://github.com/deeplukhi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-custom border border-border hover:bg-muted"
+            >
+              View on GitHub <ArrowUpRight size={18} className="ml-2" />
+            </a>
+          </div>
         </ScrollAnimation>
       </div>
     </section >

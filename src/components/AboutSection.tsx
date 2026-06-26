@@ -24,7 +24,7 @@ const AboutSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-32 pt-24 border-t border-border">
             {[
               { value: "550+", label: "problemsSolved" },
-              { value: "7+", label: "projects" },
+              { value: "8+", label: "projects" },
               {
                 value: (
                   <div className="flex items-center justify-center gap-1">
