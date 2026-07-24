@@ -652,12 +652,12 @@ const ExperiencePage = () => {
             {/* Single Experience Header */}
             <ScrollAnimation>
               <div className="flex items-start gap-4 mb-10">
-                <div className="w-10 h-10 rounded-full bg-primary/5 border border-border flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/5 border border-border flex items-center justify-center shrink-0 mt-0.5">
                   <Briefcase size={16} className="text-foreground" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-1">
-                    <h3 className="text-lg font-semibold font-montserrat">
+                    <h3 className="text-base md:text-lg font-semibold font-montserrat">
                       {experience.role}
                     </h3>
                     <span className="text-xs text-muted-foreground mono-text tracking-wide">
@@ -676,11 +676,11 @@ const ExperiencePage = () => {
             </ScrollAnimation>
 
             {/* Projects */}
-            <div className="space-y-16 ml-14">
+            <div className="space-y-12 md:space-y-16 ml-0 md:ml-14">
               {experience.projects.map((project, projectIndex) => (
                 <ScrollAnimation key={project.name} delay={projectIndex * 0.1}>
-                  <div className={projectIndex > 0 ? "pt-16 border-t border-border/40" : ""}>
-                    <h4 className="text-2xl font-bold font-montserrat mb-1 tracking-tight">
+                  <div className={projectIndex > 0 ? "pt-12 md:pt-16 border-t border-border/40" : ""}>
+                    <h4 className="text-xl md:text-2xl font-bold font-montserrat mb-1 tracking-tight">
                       {project.name}
                     </h4>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-5">
@@ -704,7 +704,7 @@ const ExperiencePage = () => {
             <ScrollAnimation delay={0.4} className="mt-20 text-center">
               <a
                 href="/"
-                className="btn-custom mx-auto border border-border hover:bg-muted inline-flex"
+                className="btn-custom mx-auto border border-border hover:bg-muted inline-flex text-sm md:text-base px-4 md:px-6"
               >
                 Back to Home <ArrowUpRight size={18} className="ml-2" />
               </a>
