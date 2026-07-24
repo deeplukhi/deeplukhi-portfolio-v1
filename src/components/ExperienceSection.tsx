@@ -1,4 +1,4 @@
-import { Briefcase, Calendar } from "lucide-react";
+import { Briefcase, Calendar, ArrowUpRight } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
 const ExperienceSection = () => {
@@ -24,7 +24,7 @@ const ExperienceSection = () => {
                   <h3 className="text-xl font-semibold">Backend Developer Intern</h3>
                   <div className="flex items-center gap-2 text-primary/80 text-sm font-medium bg-primary/5 py-1 px-3 rounded-full w-fit">
                     <Calendar size={14} />
-                    Jan 2026 - Present
+                    Feb 2026 - Jul 2026
                   </div>
                 </div>
 
@@ -36,28 +36,16 @@ const ExperienceSection = () => {
                   <span className="mono-text">Remote</span>
                 </div>
 
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-foreground mt-1.5">›</span>
-                    Working on backend development using Node.js & databases
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-foreground mt-1.5">›</span>
-                    Developing real-world software solutions
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-foreground mt-1.5">›</span>
-                    Building scalable APIs and business logic
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-foreground mt-1.5">›</span>
-                    Collaborating with team on production projects
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-foreground mt-1.5">›</span>
-                    Learning industry-level coding practices
-                  </li>
-                </ul>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  Contributed across 4 production products — CMS POS, KitchenHub, CAPS24, and HRMS — owning features end-to-end from database design to frontend.
+                </p>
+
+                <a
+                  href="/experience"
+                  className="inline-flex items-center gap-2 text-sm font-medium border border-border px-5 py-2.5 hover:bg-muted transition-colors mono-text"
+                >
+                  View Detailed Experience <ArrowUpRight size={14} />
+                </a>
               </div>
             </div>
           </div>

@@ -1,17 +1,25 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "home", href: "#home" },
-  { label: "about", href: "#about" },
+  { label: "home", hash: "#home" },
+  { label: "about", hash: "#about" },
   { label: "projects", href: "/projects" },
-  { label: "workExperience", href: "#experience" },
-  { label: "skills", href: "#skills" },
-  { label: "contact", href: "#contact" },
+  { label: "experience", href: "/experience" },
+  { label: "skills", hash: "#skills" },
+  { label: "contact", hash: "#contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  const getHref = (item: typeof navItems[number]) => {
+    if (item.href) return item.href;
+    return isHome ? item.hash : `/${item.hash}`;
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm pt-4">
@@ -22,7 +30,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.label}
-                href={item.href}
+                href={getHref(item)}
                 className="nav-link text-base  tracking-wider"
               >
                 {item.label}
@@ -47,7 +55,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={getHref(item)}
                   className="nav-link px-6 py-3"
                   onClick={() => setIsOpen(false)}
                 >

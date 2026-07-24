@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -11,6 +12,27 @@ import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    // Small delay to ensure DOM is ready after mount
+    const timer = setTimeout(scrollToHash, 100);
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
